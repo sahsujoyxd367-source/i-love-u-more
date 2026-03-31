@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday BABY ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0a0a0a, #1a001f);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* gift popup */
+#giftPopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    flex-direction: column;
+}
+
+.gift-box {
+    font-size: 80px;
+    cursor: pointer;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.hidden { display: none; }
+
+/* stars */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(white, transparent);
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* hearts */
+.heart-float {
+    position: absolute;
+    color: red;
+    animation: floatUp 6s linear infinite;
+}
+@keyframes floatUp {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    color: #ff4dff;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff4dff; }
+    to { text-shadow: 0 0 25px #ff99ff; }
+}
+
+.section { margin: 60px 0; }
+
+img {
+    width: 250px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+video {
+    width: 80%;
+    border-radius: 20px;
+}
+
+.message {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+    color: #ffd6ff;
+}
+
+/* typing */
+#typing { border-right: 2px solid #ff4dff; }
+
+/* game */
+#gameArea {
+    height: 300px;
+    border: 2px solid #ff4dff;
+    position: relative;
+}
+.game-heart {
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- GIFT POPUP -->
+<div id="giftPopup">
+    <div class="gift-box" onclick="openGift()">🎁</div>
+    <p>Click your gift Baby 💖</p>
+</div>
+
+<div style="
+position: fixed;
+top: 20px;
+right: 20px;
+background: #ff4dff;
+color: white;
+padding: 10px 15px;
+border-radius: 30px;
+box-shadow: 0 0 15px #ff4dff;
+font-size: 18px;
+text-align: center;
+">
+
+🎧 Tap to Play
+
+<br><br>
+
+<audio controls autoplay loop style="width:120px;">
+  <source src="images/music.mp3" type="audio/mp3">
+</audio>
+
+</div>
+
+<script>
+function openGift(){
+    document.getElementById("giftPopup").style.display="none";
+}
+
+/* stars */
+for(let i=0;i<25;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*window.innerWidth+"px";
+s.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(s);
+}
+
+/* hearts */
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart-float";
+h.innerHTML="❤️";
+h.style.left=Math.random()*window.innerWidth+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},500);
+</script>
+
+<div class="container">
+
+<h1>Happy 17th Birthday Aashi ❤️</h1>
+
+<div class="section message">
+<p>
+Happy Birthday my Baby… my Aashi… 💖  
+You are the most beautiful part of my life.  
+Even distance cannot change how deeply I love you.  
+Every single day… I fall for you again and again. 🥺
+</p>
+</div>
+
+<!-- photos -->
+<div class="section">
+<h2>My Beautiful Girl 💕</h2>
+<img src="images/baby1.jpg">
+<img src="images/baby2.jpeg">
+</div>
+
+<!-- video -->
+<div class="section">
+<h2>MINE🎥</h2>
+<video controls>
+<source src="images/baby3.mp4">
+</video>
+</div>
+
+<!-- typing -->
+<div class="section message">
+<h2>My Heart To You 💌</h2>
+<p id="typing"></p>
+</div>
+
+<!-- game -->
+<div class="section">
+<h2>Catch My Love 🎮</h2>
+Score: <span id="score">0</span>
+<div id="gameArea"></div>
+</div>
+
+<!-- long emotional -->
+<div class="section message">
+<p>
+Aashi… I love you in every moment… even when we fight.  
+Because even in those moments… I realize how much you mean to me.  
+I don’t want a perfect love… I want us… real, messy, forever. ❤️  
+</p>
+
+<p>
+Baby… distance hurts sometimes… I miss you so much.  
+But I promise you… one day I’ll hug you so tight  
+and make up for every second we spent apart. 🥺  
+</p>
+
+<p>
+You are not just my girlfriend…  
+You are my home, my peace, my happiness… my everything. 💞  
+</p>
+
+<p>
+And no matter what happens…  
+I will always choose you… again and again… forever. ❤️  
+</p>
+</div>
+
+</div>
+
+<script>
+/* typing */
+let text="Happy Birthday my Baby... I wish I could be there with you today. Aashi, you are my everything. Even when we fight, I never stop loving you. You are my happiness, my peace, my home. I love you endlessly... forever ❤️";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}}
+type();
+
+/* game */
+let score=0;
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="game-heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*90+"%";
+heart.style.top="0px";
+
+heart.onclick=()=>{
+score++;
+document.getElementById("score").innerText=score;
+heart.remove();
+};
+
+document.getElementById("gameArea").appendChild(heart);
+
+let fall=setInterval(()=>{
+let top=parseInt(heart.style.top);
+heart.style.top=(top+5)+"px";
+if(top>280){heart.remove();clearInterval(fall);}
+},50);
+
+},800);
+</script>
+
+</body>
+</html>
